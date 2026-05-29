@@ -348,6 +348,13 @@ th {
   margin-bottom: 2rem;
 }
 
+.page-header-tagline {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin: 0.25rem 0 0.5rem 0;
+  font-weight: 300;
+}
+
 .page-header-subtitle {
   color: var(--text-secondary);
   font-size: 0.9375rem;

@@ -5,6 +5,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout title="Resume — Radley Ciego" activePage="resume">
   <div class="page-header">
     <h1>Radley Ciego</h1>
+    <p class="page-header-tagline">Data Engineer · Geospatial · Climate Risk</p>
     <div class="page-header-subtitle">
       <span>New York, NY</span>
       <a href="mailto:radleykc@gmail.com">radleykc@gmail.com</a>
@@ -23,9 +24,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
       <div class="resume-item-subtitle">Oak Ridge National Laboratory (U.S. Dept. of Energy)</div>
       <ul>
-        <li>Engineered and validated a multi-source geospatial data integration pipeline across 4+ national infrastructure datasets using fuzzy matching and spatial proximity algorithms, implementing a confusion matrix-based evaluation framework with stratified sampling for systematic comparison of 12 algorithmic configurations</li>
+        <li>Engineered and deployed a modular, Prefect-orchestrated ETL pipeline suite for the C-HER project on ORNL's CHER HPC, automating the ingestion, conversion, and standardization of large-scale exposomic datasets — including H3-indexed radon predictions, EAGLE-I power outage time series, and Census TIGER road network shapefiles — from RustFS object storage into zstd-compressed, analytics-ready Parquet format for downstream ML and deep learning workflows</li>
+        <li>Designed and implemented schema normalization, versioning, and column metadata workflows under C-HER to resolve cross-dataset inconsistencies across heterogeneous multimodal geospatial data sources, enforcing standardized schemas aligned with ORNL's HERMIT data catalog system and hive-partitioned storage architecture</li>
         <li>Engineered automated ETL pipelines processing multi-terabyte research datasets into ML-ready columnar format (Parquet) on S3-compatible object storage with hive-partitioned schemas and versioned metadata for cross-institutional research teams</li>
-        <li>Designed a data governance framework harmonizing schemas across heterogeneous multi-source research data with versioned metadata, documented transformations, and standardized storage supporting compliance with data use agreements and privacy requirements</li>
         <li>Served as data architect for cross-functional research teams across 3+ multi-institutional projects spanning environmental exposure modeling, critical infrastructure analysis, and health research</li>
         <li>Debugged and remediated production failures in a distributed Python scraper pipeline deployed on Kubernetes-managed Airflow workers, resolving SSL, parser, schema, and coordinate mismatches across the EAGLE-I national grid monitoring platform</li>
       </ul>
@@ -47,28 +48,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     <div class="resume-item">
       <div class="resume-item-header">
-        <span class="resume-item-title">Topographic Engineer</span>
-        <span class="resume-item-date">Mar 2022 &ndash; Feb 2023</span>
+        <span class="resume-item-title">Topographic Engineer &amp; Planner</span>
+        <span class="resume-item-date">Jun 2021 &ndash; Feb 2023</span>
       </div>
       <div class="resume-item-subtitle">Office of the Bronx Borough President</div>
       <ul>
-        <li>Managed the Bronx Topographic Bureau and oversaw its daily operations per NYC Charter &sect;82(3)</li>
-        <li>Maintained the official Bronx Borough Map, reviewed engineering drawings, and approved City Map alterations through ULURP</li>
-        <li>Assigned and verified street addresses; determined legal street status, ownership, and dimensions for public improvement projects</li>
-        <li>Served as consulting engineer providing technical assistance on capital projects and interagency coordination</li>
-      </ul>
-    </div>
-
-    <div class="resume-item">
-      <div class="resume-item-header">
-        <span class="resume-item-title">Topographic Planner</span>
-        <span class="resume-item-date">Jun 2021 &ndash; Mar 2022</span>
-      </div>
-      <div class="resume-item-subtitle">Office of the Bronx Borough President</div>
-      <ul>
-        <li>Supported maintenance of the Bronx Borough Map and evaluated ULURP-related land use proposals</li>
-        <li>Conducted spatial and land-use analysis supporting borough-wide planning and zoning initiatives</li>
-        <li>Assisted in address assignment, verification, and street status research</li>
+        <li>Managed the Bronx Topographic Bureau and oversaw its daily operations per NYC Charter &sect;82(3); maintained the official Bronx Borough Map, reviewed engineering drawings, and approved City Map alterations through ULURP</li>
+        <li>Assigned and verified street addresses; determined legal street status, ownership, and dimensions for public improvement projects; served as consulting engineer providing technical assistance on capital projects and interagency coordination</li>
       </ul>
     </div>
   </section>
@@ -83,10 +69,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
       <div class="resume-item-subtitle"><a href="https://github.com/radleyciego/mobility-resilience-weather">github.com/radleyciego/mobility-resilience-weather</a></div>
       <ul>
-        <li>Designed a causal inference framework using Difference-in-Differences with zone and time fixed effects, treating extreme precipitation as a natural experiment to estimate a statistically significant +97 trip/zone/day demand increase on NYC Uber/Lyft rideshare volume (p &lt; 0.0001)</li>
-        <li>Built an automated data pipeline processing 100M+ trip records (Parquet, Polars) merged with NOAA weather observations to label weather shock events across 262 NYC taxi zones</li>
-        <li>Developed XGBoost/LightGBM demand forecasting models achieving R&sup2; = 0.96 with time-series cross-validation and SHAP feature importance analysis identifying lagged demand and precipitation as top predictors</li>
-        <li>Implemented equity stratification by neighborhood income quintile with Mann-Whitney U testing for differential recovery from weather shocks</li>
+        <li>Designed a causal inference framework using Difference-in-Differences with zone and time fixed effects, estimating a statistically significant +97 trip/zone/day demand increase on NYC Uber/Lyft rideshare volume during extreme precipitation events (p &lt; 0.0001)</li>
+        <li>Built an automated data pipeline processing 100M+ trip records (Parquet, Polars) merged with NOAA weather observations across 262 NYC taxi zones</li>
+        <li>Developed XGBoost/LightGBM demand forecasting models achieving R&sup2; = 0.96 with time-series cross-validation and SHAP feature importance analysis</li>
+      </ul>
+    </div>
+
+    <div class="resume-item">
+      <div class="resume-item-header">
+        <span class="resume-item-title">Power Outage Detection via Traffic Patterns</span>
+        <span class="resume-item-date">2026</span>
+      </div>
+      <div class="resume-item-subtitle"><a href="https://github.com/radleyciego/outage-traffic-detection">github.com/radleyciego/outage-traffic-detection</a></div>
+      <ul>
+        <li>Investigating whether GPS probe vehicle data can passively detect distribution-level power outages by identifying anomalous driver behavior at traffic signals that have lost power — a novel intersection of energy grid and transportation network data</li>
+        <li>Engineered a spatial data pipeline joining 50K+ OSM signalized intersections to NPMRDS road links using R-tree spatial indexing, stored as GeoParquet with automated quality checks</li>
+        <li>Designed a causal framework comparing traffic signatures during outage treatment windows against matched control intersections, isolating outage effects from normal congestion</li>
       </ul>
     </div>
   </section>
@@ -95,20 +93,28 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <h2 class="resume-section-title">Technical Skills</h2>
     <div class="resume-skills">
       <div class="resume-skill-group">
-        <strong>Research Methods:</strong>
-        <span>Causal inference (Difference-in-Differences), SHAP model interpretability, time-series cross-validation, composite index development, confusion matrix-based evaluation</span>
+        <strong>Geospatial:</strong>
+        <span>GeoPandas, PostGIS, GDAL, H3 hexagonal indexing, Census TIGER/Line, WKB geometry serialization, Shapefile processing, EPSG:4269/4326</span>
       </div>
       <div class="resume-skill-group">
-        <strong>Data Engineering:</strong>
-        <span>Python, SQL; ETL/ELT pipeline design, dbt, columnar storage (Parquet/zstd), schema normalization &amp; versioning, Hive partitioning</span>
+        <strong>Data Pipelines:</strong>
+        <span>Prefect, Apache Airflow, Apache Spark, dbt, ETL/ELT design, columnar storage (Parquet/zstd), Hive partitioning, schema normalization &amp; versioning</span>
       </div>
       <div class="resume-skill-group">
         <strong>Infrastructure:</strong>
-        <span>Docker, Kubernetes, Apache Airflow, Apache Spark, HPC, Git, AWS S3, MinIO, RustFS</span>
+        <span>Docker, Kubernetes, HPC (CHER), RustFS, AWS S3 API, MinIO, Git, SSH</span>
       </div>
       <div class="resume-skill-group">
-        <strong>Domain:</strong>
-        <span>Empirical research design, multi-source data integration, geospatial analysis (PostGIS, GeoPandas, H3), urban policy analysis</span>
+        <strong>Languages &amp; Tools:</strong>
+        <span>Python, Bash, SQL, PyArrow, Boto3, PyYAML, Requests, AWS CLI, uv</span>
+      </div>
+      <div class="resume-skill-group">
+        <strong>Data Systems:</strong>
+        <span>Snowflake, PostgreSQL, DuckDB, HERMIT data catalog</span>
+      </div>
+      <div class="resume-skill-group">
+        <strong>Core Concepts:</strong>
+        <span>Idempotent pipeline design, compute right-sizing, I/O vs CPU optimization, data quality frameworks</span>
       </div>
     </div>
   </section>
