@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+---
+
+<BaseLayout title="Radley Ciego" activePage="index">
+  <section class="hero">
+    <h1>Radley Ciego</h1>
+    <p class="hero-subtitle">Data Engineering &middot; Causal Inference &middot; Geospatial Research</p>
+    <p class="bio">
+      I build data infrastructure for research at the intersection of critical infrastructure,
+      urban systems, and empirical policy analysis. My work combines production-grade data
+      engineering with rigorous causal identification strategies.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="section-title">Research & Projects</h2>
+
+    <ProjectCard
+      title="Power Outage Detection via Traffic Patterns"
+      description="Novel method using GPS probe vehicle data to detect distribution-level power outages by identifying anomalous driver behavior at dark traffic signals. Intersection-anchored causal inference with matched control design. CUNY Hunter / ORNL."
+      href="/projects/outage-detection"
+      tags={["Causal Inference", "Spatial Analysis", "Python", "OSMnx", "Scikit-learn"]}
+    />
+
+    <ProjectCard
+      title="Mobility Resilience Under Extreme Weather"
+      description="Difference-in-Differences framework treating extreme precipitation as a natural experiment to estimate demand shocks on NYC rideshare volume. Automated pipeline processing 100M+ trip records with NOAA weather integration and equity stratification."
+      href="/projects/mobility-resilience"
+      tags={["DiD", "XGBoost", "Polars", "NOAA", "SHAP", "Equity Analysis"]}
+    />
+  </section>
+
+  <div class="links">
+    <a href="https://github.com/radleyciego">GitHub &rarr;</a>
+    <a href="https://linkedin.com/in/radleykc">LinkedIn &rarr;</a>
+    <a href="mailto:radleykc@gmail.com">radleykc@gmail.com</a>
+  </div>
+</BaseLayout>

@@ -1,0 +1,138 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Resume — Radley Ciego" activePage="resume">
+  <div class="page-header">
+    <h1>RADLEY KENNETH CIEGO</h1>
+    <div class="page-header-subtitle">
+      <span>New York, NY</span>
+      <a href="mailto:radleykc@gmail.com">radleykc@gmail.com</a>
+      <a href="https://linkedin.com/in/radleykc">linkedin.com/in/radleykc</a>
+      <a href="https://github.com/radleyciego">github.com/radleyciego</a>
+    </div>
+  </div>
+
+  <section class="resume-section">
+    <h2 class="resume-section-title">Experience</h2>
+
+    <div class="resume-item">
+      <div class="resume-item-header">
+        <span class="resume-item-title">R&amp;D Geospatial Data Engineer II</span>
+        <span class="resume-item-date">Jan 2024 &ndash; Present</span>
+      </div>
+      <div class="resume-item-subtitle">Oak Ridge National Laboratory (U.S. Dept. of Energy)</div>
+      <ul>
+        <li>Engineered and validated a multi-source geospatial data integration pipeline across 4+ national infrastructure datasets using fuzzy matching and spatial proximity algorithms, implementing a confusion matrix-based evaluation framework with stratified sampling for systematic comparison of 12 algorithmic configurations</li>
+        <li>Engineered automated ETL pipelines processing multi-terabyte research datasets into ML-ready columnar format (Parquet) on S3-compatible object storage with hive-partitioned schemas and versioned metadata for cross-institutional research teams</li>
+        <li>Designed a data governance framework harmonizing schemas across heterogeneous multi-source research data with versioned metadata, documented transformations, and standardized storage supporting compliance with data use agreements and privacy requirements</li>
+        <li>Served as data architect for cross-functional research teams across 3+ multi-institutional projects spanning environmental exposure modeling, critical infrastructure analysis, and health research</li>
+        <li>Debugged and remediated production failures in a distributed Python scraper pipeline deployed on Kubernetes-managed Airflow workers, resolving SSL, parser, schema, and coordinate mismatches across the EAGLE-I national grid monitoring platform</li>
+      </ul>
+    </div>
+
+    <div class="resume-item">
+      <div class="resume-item-header">
+        <span class="resume-item-title">Mapping and Spatial Records Specialist</span>
+        <span class="resume-item-date">Feb 2023 &ndash; Jan 2024</span>
+      </div>
+      <div class="resume-item-subtitle">NYC Department of City Planning</div>
+      <ul>
+        <li>Maintained Zoning Map and City Map datasets serving 30+ city agencies, enforcing spatial data quality standards and governance protocols</li>
+        <li>Supported citywide public review processes by preparing geospatial analyses and cartographic products for community boards, borough presidents, and planning commissions</li>
+      </ul>
+    </div>
+
+    <div class="resume-item">
+      <div class="resume-item-header">
+        <span class="resume-item-title">Topographic Engineer &amp; Planner</span>
+        <span class="resume-item-date">Jun 2021 &ndash; Feb 2023</span>
+      </div>
+      <div class="resume-item-subtitle">Office of the Bronx Borough President</div>
+      <ul>
+        <li>Produced annual development reports synthesizing geospatial and open-source datasets to surface planning insights for bureau leadership</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="resume-section">
+    <h2 class="resume-section-title">Projects</h2>
+
+    <div class="resume-item">
+      <div class="resume-item-header">
+        <span class="resume-item-title">Mobility Resilience Under Extreme Weather</span>
+        <span class="resume-item-date">2026</span>
+      </div>
+      <div class="resume-item-subtitle"><a href="https://github.com/radleyciego/mobility-resilience-weather">github.com/radleyciego/mobility-resilience-weather</a></div>
+      <ul>
+        <li>Designed a causal inference framework using Difference-in-Differences with zone and time fixed effects, treating extreme precipitation as a natural experiment to estimate a statistically significant +97 trip/zone/day demand increase on NYC Uber/Lyft rideshare volume (p &lt; 0.0001)</li>
+        <li>Built an automated data pipeline processing 100M+ trip records (Parquet, Polars) merged with NOAA weather observations to label weather shock events across 262 NYC taxi zones</li>
+        <li>Developed XGBoost/LightGBM demand forecasting models achieving R&sup2; = 0.96 with time-series cross-validation and SHAP feature importance analysis identifying lagged demand and precipitation as top predictors</li>
+        <li>Implemented equity stratification by neighborhood income quintile with Mann-Whitney U testing for differential recovery from weather shocks</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="resume-section">
+    <h2 class="resume-section-title">Technical Skills</h2>
+    <div class="resume-skills">
+      <div class="resume-skill-group">
+        <strong>Research Methods:</strong>
+        <span>Causal inference (Difference-in-Differences), SHAP model interpretability, time-series cross-validation, composite index development, confusion matrix-based evaluation</span>
+      </div>
+      <div class="resume-skill-group">
+        <strong>Data Engineering:</strong>
+        <span>Python, SQL; ETL/ELT pipeline design, dbt, columnar storage (Parquet/zstd), schema normalization &amp; versioning, Hive partitioning</span>
+      </div>
+      <div class="resume-skill-group">
+        <strong>Infrastructure:</strong>
+        <span>Docker, Kubernetes, Apache Airflow, Apache Spark, HPC, Git, AWS S3, MinIO, RustFS</span>
+      </div>
+      <div class="resume-skill-group">
+        <strong>Domain:</strong>
+        <span>Empirical research design, multi-source data integration, geospatial analysis (PostGIS, GeoPandas, H3), urban policy analysis</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="resume-section">
+    <h2 class="resume-section-title">Education</h2>
+
+    <div class="resume-item">
+      <div class="resume-item-header">
+        <span class="resume-item-title">Master of Science, Geoinformatics</span>
+        <span class="resume-item-date">In Progress</span>
+      </div>
+      <div class="resume-item-subtitle">CUNY Hunter College</div>
+    </div>
+
+    <div class="resume-item">
+      <div class="resume-item-header">
+        <span class="resume-item-title">Advanced Certificate, Geographic Information Systems (GIS)</span>
+        <span class="resume-item-date">2022</span>
+      </div>
+      <div class="resume-item-subtitle">CUNY Hunter College</div>
+    </div>
+
+    <div class="resume-item">
+      <div class="resume-item-header">
+        <span class="resume-item-title">Bachelor of Arts, Political Science, Urban Studies &amp; Arabic</span>
+        <span class="resume-item-date">2019</span>
+      </div>
+      <div class="resume-item-subtitle">Fordham University</div>
+    </div>
+  </section>
+
+  <section class="resume-section">
+    <h2 class="resume-section-title">Publications &amp; Datasets</h2>
+    <ul>
+      <li>EAGLE-I Power Outage Data 2025. ORNL, Feb 2026. doi:10.13139/ORNLNCCS/3012826</li>
+      <li>EAGLE-I Power Outage Data 2024. ORNL, Apr 2025. doi:10.13139/OLCF/2500278</li>
+    </ul>
+  </section>
+
+  <section class="resume-section">
+    <h2 class="resume-section-title">Languages</h2>
+    <p>English (native) &middot; Arabic (intermediate) &middot; Spanish (intermediate)</p>
+  </section>
+</BaseLayout>
