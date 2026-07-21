@@ -22,7 +22,7 @@ This document records every exact visual and rendering value for the hero globe.
 | `fov` | `32` |
 | `near` | `0.1` |
 | `far` | `1000` |
-| Position | `(0, 0, 22)` |
+| Position | `(0, 0, 20.2)` |
 | `lookAt` | `(0, 0, 0)` |
 
 ## Lighting
@@ -42,7 +42,7 @@ This document records every exact visual and rendering value for the hero globe.
 | Land mesh color | `#0f1a30` |
 | Land mesh opacity | `0.35` |
 | Depth sphere | radius `5.0`, color `#010208`, opacity `0.45` |
-| Rotation speed (auto) | `0.0085` rad/s (counterclockwise around Y) |
+| Rotation speed (auto) | `0.01` rad/s (counterclockwise around Y) |
 | Drag sensitivity | `0.005` |
 | Auto-resume after drag | `3000` ms |
 | Drag idle timeout | `5000` ms |

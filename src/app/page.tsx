@@ -62,7 +62,7 @@ export default function Home() {
             </h1>
 
             {/* Bio */}
-            <p className="mt-8 max-w-xl mx-auto font-mono text-base leading-7 text-foreground">
+            <p className="mt-8 max-w-2xl mx-auto font-mono text-base leading-7 text-foreground">
               I architect fault-tolerant data pipelines that transform raw
               geospatial data into actionable infrastructure resilience
               insight, from government shapefiles to interactive risk maps.
