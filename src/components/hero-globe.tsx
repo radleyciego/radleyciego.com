@@ -35,7 +35,7 @@ const DEPTH_SPHERE_RADIUS = 5.0;
 const LAND_RADIUS = GLOBE_RADIUS + 0.018;
 const NODE_RADIUS = GLOBE_RADIUS + 0.04;
 const ARC_START_RADIUS = GLOBE_RADIUS + 0.035;
-const EARTH_ROTATION_SPEED = 0.01;
+const EARTH_ROTATION_SPEED = (Math.PI * 2) / 45;
 const CAMERA_Z = 20.2;
 const FOV = 32;
 const MAX_DPR = 1.75;
@@ -107,21 +107,21 @@ const NODES: GlobeNode[] = [
 /* ------------------------------------------------------------------ */
 
 const CONNECTIONS: GlobeConnection[] = [
-  { id: "c1", from: "nyc", to: "lhr", startDelay: 0.0, drawDuration: 2.0, holdDuration: 5.0, fadeDuration: 1.8, restDuration: 8.0 },
-  { id: "c3", from: "lax", to: "hnd", startDelay: 3.5, drawDuration: 2.2, holdDuration: 5.5, fadeDuration: 1.8, restDuration: 7.0 },
-  { id: "c4", from: "lhr", to: "dxb", startDelay: 6.0, drawDuration: 1.8, holdDuration: 4.5, fadeDuration: 1.5, restDuration: 8.5 },
-  { id: "c8", from: "gru", to: "nyc", startDelay: 9.0, drawDuration: 1.8, holdDuration: 4.5, fadeDuration: 1.5, restDuration: 8.0 },
-  { id: "c12", from: "lhr", to: "hnd", startDelay: 12.5, drawDuration: 2.0, holdDuration: 5.0, fadeDuration: 1.8, restDuration: 7.5 },
-  { id: "c5", from: "dxb", to: "bom", startDelay: 15.5, drawDuration: 1.5, holdDuration: 4.0, fadeDuration: 1.3, restDuration: 9.0 },
-  { id: "c7", from: "hnd", to: "syd", startDelay: 18.5, drawDuration: 1.8, holdDuration: 4.5, fadeDuration: 1.5, restDuration: 8.0 },
-  { id: "c10", from: "osl", to: "nyc", startDelay: 21.5, drawDuration: 1.8, holdDuration: 4.5, fadeDuration: 1.5, restDuration: 8.0 },
-  { id: "c11", from: "dc", to: "lhr", startDelay: 24.5, drawDuration: 1.8, holdDuration: 4.5, fadeDuration: 1.5, restDuration: 8.0 },
-  { id: "c15", from: "yyz", to: "lhr", startDelay: 27.5, drawDuration: 1.8, holdDuration: 4.5, fadeDuration: 1.5, restDuration: 8.0 },
-  { id: "c2", from: "nyc", to: "chi", startDelay: 30.5, drawDuration: 1.5, holdDuration: 4.0, fadeDuration: 1.3, restDuration: 9.0 },
-  { id: "c6", from: "bom", to: "sin", startDelay: 33.5, drawDuration: 1.5, holdDuration: 4.0, fadeDuration: 1.3, restDuration: 9.0 },
-  { id: "c13", from: "sin", to: "syd", startDelay: 36.5, drawDuration: 1.5, holdDuration: 4.0, fadeDuration: 1.3, restDuration: 9.0 },
-  { id: "c14", from: "dxb", to: "sin", startDelay: 39.5, drawDuration: 1.5, holdDuration: 4.0, fadeDuration: 1.3, restDuration: 9.0 },
-  { id: "c9", from: "cmn", to: "lhr", startDelay: 42.5, drawDuration: 1.5, holdDuration: 4.0, fadeDuration: 1.3, restDuration: 9.0 },
+  { id: "c1", from: "nyc", to: "lhr", startDelay: 0.0, drawDuration: 1.0, holdDuration: 2.5, fadeDuration: 0.9, restDuration: 4.0 },
+  { id: "c3", from: "lax", to: "hnd", startDelay: 1.75, drawDuration: 1.1, holdDuration: 2.75, fadeDuration: 0.9, restDuration: 3.5 },
+  { id: "c4", from: "lhr", to: "dxb", startDelay: 3.0, drawDuration: 0.9, holdDuration: 2.25, fadeDuration: 0.75, restDuration: 4.25 },
+  { id: "c8", from: "gru", to: "nyc", startDelay: 4.5, drawDuration: 0.9, holdDuration: 2.25, fadeDuration: 0.75, restDuration: 4.0 },
+  { id: "c12", from: "lhr", to: "hnd", startDelay: 6.25, drawDuration: 1.0, holdDuration: 2.5, fadeDuration: 0.9, restDuration: 3.75 },
+  { id: "c5", from: "dxb", to: "bom", startDelay: 7.75, drawDuration: 0.75, holdDuration: 2.0, fadeDuration: 0.65, restDuration: 4.5 },
+  { id: "c7", from: "hnd", to: "syd", startDelay: 9.25, drawDuration: 0.9, holdDuration: 2.25, fadeDuration: 0.75, restDuration: 4.0 },
+  { id: "c10", from: "osl", to: "nyc", startDelay: 10.75, drawDuration: 0.9, holdDuration: 2.25, fadeDuration: 0.75, restDuration: 4.0 },
+  { id: "c11", from: "dc", to: "lhr", startDelay: 12.25, drawDuration: 0.9, holdDuration: 2.25, fadeDuration: 0.75, restDuration: 4.0 },
+  { id: "c15", from: "yyz", to: "lhr", startDelay: 13.75, drawDuration: 0.9, holdDuration: 2.25, fadeDuration: 0.75, restDuration: 4.0 },
+  { id: "c2", from: "nyc", to: "chi", startDelay: 15.25, drawDuration: 0.75, holdDuration: 2.0, fadeDuration: 0.65, restDuration: 4.5 },
+  { id: "c6", from: "bom", to: "sin", startDelay: 16.75, drawDuration: 0.75, holdDuration: 2.0, fadeDuration: 0.65, restDuration: 4.5 },
+  { id: "c13", from: "sin", to: "syd", startDelay: 18.25, drawDuration: 0.75, holdDuration: 2.0, fadeDuration: 0.65, restDuration: 4.5 },
+  { id: "c14", from: "dxb", to: "sin", startDelay: 19.75, drawDuration: 0.75, holdDuration: 2.0, fadeDuration: 0.65, restDuration: 4.5 },
+  { id: "c9", from: "cmn", to: "lhr", startDelay: 21.25, drawDuration: 0.75, holdDuration: 2.0, fadeDuration: 0.65, restDuration: 4.5 },
 ];
 
 /* ------------------------------------------------------------------ */

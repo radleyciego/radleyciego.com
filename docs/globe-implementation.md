@@ -42,7 +42,7 @@ This document records every exact visual and rendering value for the hero globe.
 | Land mesh color | `#0f1a30` |
 | Land mesh opacity | `0.35` |
 | Depth sphere | radius `5.0`, color `#010208`, opacity `0.45` |
-| Rotation speed (auto) | `0.01` rad/s (counterclockwise around Y) |
+| Rotation speed (auto) | `(Math.PI * 2) / 45` rad/s ≈ 0.1396 (counterclockwise around Y, 45 s per revolution) |
 | Drag sensitivity | `0.005` |
 | Auto-resume after drag | `3000` ms |
 | Drag idle timeout | `5000` ms |

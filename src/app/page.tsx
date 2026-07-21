@@ -12,15 +12,19 @@ import { DubaiMap } from "@/components/dubai-map";
 
 
 const skills = [
-  "AWS S3",
-  "GEOPARQUET",
-  "DUCKDB",
   "PREFECT",
-  "MAPLIBRE",
-  "DECK.GL",
+  "AIRFLOW",
   "POSTGIS",
+  "DUCKDB",
+  "GEOPARQUET",
+  "POLARS",
+  "GEOPANDAS",
+  "AWS S3",
+  "DOCKER",
+  "KUBERNETES",
   "PYTHON",
-  "PMTILES",
+  "SQL",
+  "BASH",
 ];
 
 export default function Home() {
@@ -38,7 +42,7 @@ export default function Home() {
         }}
       >
 
-        <div className="relative mx-auto flex w-full flex-col items-center pt-16 text-center sm:px-10 sm:pt-24">
+        <div className="relative mx-auto flex w-full flex-col items-center pt-10 text-center sm:px-10 sm:pt-14">
           <div className="max-w-4xl">
             {/* Status bar */}
             <div className="mb-10 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
@@ -52,8 +56,8 @@ export default function Home() {
 
             {/* Tagline */}
             <p className="mb-6 font-mono text-[11px] uppercase tracking-[0.2em] text-primary">
-              [ Geospatial Data Engineering · Infrastructure Resilience · Open
-              Data Systems ]
+              [ Geospatial Data Engineering · Infrastructure Resilience ·
+              Regional Market Access ]
             </p>
 
             {/* Name */}
@@ -63,10 +67,10 @@ export default function Home() {
 
             {/* Bio */}
             <p className="mt-8 max-w-2xl mx-auto font-mono text-base leading-7 text-foreground">
-              I architect fault-tolerant data pipelines that transform raw
-              geospatial data into actionable infrastructure resilience
-              insight, from government shapefiles to interactive risk maps.
-              I currently work at{" "}
+              I architect fault-tolerant data pipelines and the research
+              analysis behind them, turning raw geospatial data into actionable
+              infrastructure resilience insight, from government shapefiles to
+              published federal datasets. I currently work at{" "}
               <span className="text-primary">
                 Oak Ridge National Laboratory
               </span>
@@ -75,12 +79,12 @@ export default function Home() {
             </p>
 
             {/* CTA */}
-            <div className="mt-12 flex w-full flex-col gap-3 sm:inline-flex sm:w-fit sm:flex-row">
+            <div className="mt-6 flex w-full flex-col gap-3 sm:inline-flex sm:w-fit sm:flex-row sm:items-center">
               <Link
-                href="#projects"
+                href="#services"
                 className="group inline-flex w-full items-center justify-center gap-3 bg-gradient-to-br from-primary to-primary/80 px-7 py-4 font-mono text-[12px] uppercase tracking-[0.18em] text-primary-foreground transition-colors hover:from-primary/90 hover:to-primary/70 sm:w-auto sm:justify-start"
               >
-                View Projects
+                View Services
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="14"
@@ -97,12 +101,18 @@ export default function Home() {
                   <path d="m12 5 7 7-7 7" />
                 </svg>
               </Link>
+              <Link
+                href="#projects"
+                className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground"
+              >
+                or see recent work →
+              </Link>
             </div>
           </div>
         </div>
 
         {/* 3D Globe visualization */}
-        <div className="h-[60vh] lg:h-[70vh] w-full overflow-hidden relative mt-8">
+        <div className="h-[60vh] lg:h-[70vh] w-full overflow-hidden relative mt-4">
           <HeroGlobeLoader />
         </div>
       </section>
@@ -124,8 +134,58 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Services */}
+      <section id="services" className="mx-auto max-w-6xl px-6 py-20 sm:px-10">
+        <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.2em] text-primary">
+          [ What I Do ]
+        </p>
+        <h2 className="font-heading text-4xl leading-tight tracking-tight sm:text-5xl mb-16">
+          Services
+        </h2>
+
+        <div className="grid sm:grid-cols-2 gap-8">
+          <div className="border border-border p-6 sm:p-8">
+            <h3 className="font-heading text-sm font-bold uppercase tracking-[0.08em] mb-3">
+              Infrastructure Resilience Assessment
+            </h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Quantitative risk scoring for critical infrastructure against
+              climate, seismic, and operational stress scenarios.
+            </p>
+          </div>
+          <div className="border border-border p-6 sm:p-8">
+            <h3 className="font-heading text-sm font-bold uppercase tracking-[0.08em] mb-3">
+              Custom Geospatial Data Pipelines
+            </h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              End-to-end ETL/ELT design — from raw source ingestion through
+              schema validation to analytics-ready storage.
+            </p>
+          </div>
+          <div className="border border-border p-6 sm:p-8">
+            <h3 className="font-heading text-sm font-bold uppercase tracking-[0.08em] mb-3">
+              GIS Modernization &amp; Data Governance
+            </h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Migration from legacy desktop GIS to cloud-native spatial data
+              infrastructure with versioned schemas.
+            </p>
+          </div>
+          <div className="border border-border p-6 sm:p-8">
+            <h3 className="font-heading text-sm font-bold uppercase tracking-[0.08em] mb-3">
+              Regional Infrastructure Market Analysis
+            </h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Working proficiency in Arabic and Spanish supports source review
+              and stakeholder engagement in MENA and Latin American
+              infrastructure markets underserved by English-language analysis.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Projects section */}
-      <section id="projects" className="mx-auto max-w-6xl px-6 py-20 sm:px-10">
+      <section id="projects" className="mx-auto max-w-6xl px-6 py-20 sm:px-10 border-t border-border">
         <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.2em] text-primary">
           [ Selected Projects ]
         </p>
@@ -168,7 +228,7 @@ export default function Home() {
               </div>
 
               <a
-                href="mailto:radley@radleyciego.com"
+                href="mailto:radleykc@gmail.com"
                 className="inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.18em] text-foreground transition-colors hover:text-primary group"
               >
                 Request a briefing

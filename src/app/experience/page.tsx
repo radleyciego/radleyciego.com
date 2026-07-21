@@ -5,7 +5,7 @@ export default function Experience() {
       org: "Oak Ridge National Laboratory",
       period: "Jan 2024 – Present",
       description:
-        "Building fault-tolerant ETL pipelines that process Census TIGER shapefiles, Weather Underground station data, and exposomic datasets into AI-ready columnar storage on HPC infrastructure. Working with large-scale geospatial data at federal research scale, from raw shapefiles to clean, queryable GeoParquet and DuckDB spatial databases.",
+        "Architecting fault-tolerant ETL pipelines that transform heterogeneous federal research data, spanning geospatial, environmental, and infrastructure domains, into AI-ready, queryable storage at HPC scale. Work spans the full research lifecycle, from pipeline architecture and data quality validation to the analysis and published datasets that result from it.",
       tags: ["Python", "Polars", "DuckDB", "GeoParquet", "Kubernetes", "Prefect"],
     },
     {
@@ -39,21 +39,27 @@ export default function Experience() {
     },
   ];
 
-  const skills = [
-    "Python",
-    "Polars",
-    "DuckDB",
-    "PostGIS",
-    "Airflow",
-    "Prefect",
-    "Kubernetes",
-    "GeoParquet",
-    "MapLibre GL JS",
-    "deck.gl",
-    "PMTiles",
-    "ArcGIS",
-    "Spatial Analysis",
-    "ETL Pipelines",
+  const skillGroups = [
+    {
+      label: "Data Infrastructure & Orchestration",
+      items: ["Prefect", "Apache Airflow", "ETL/ELT Pipeline Design", "Schema Versioning"],
+    },
+    {
+      label: "Geospatial & Analytics",
+      items: ["PostGIS", "DuckDB (Spatial)", "GeoParquet", "ArcGIS", "Polars", "GeoPandas"],
+    },
+    {
+      label: "Cloud & Systems",
+      items: ["AWS S3", "Docker", "Kubernetes", "HPC"],
+    },
+    {
+      label: "Languages & Tools",
+      items: ["Python", "SQL", "Bash", "Git"],
+    },
+    {
+      label: "Languages",
+      items: ["Arabic (Intermediate)", "Spanish (Intermediate)"],
+    },
   ];
 
   return (
@@ -125,20 +131,53 @@ export default function Experience() {
         </div>
       </section>
 
-      <section>
+      <section className="mb-16">
         <h2 className="font-heading text-lg font-bold uppercase tracking-[0.12em] mb-8">
           Skills
         </h2>
         <div className="border border-border p-6 sm:p-8">
-          <div className="flex flex-wrap gap-3">
-            {skills.map((skill) => (
-              <span
-                key={skill}
-                className="font-mono text-xs uppercase tracking-widest border border-border px-4 py-2 text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
-              >
-                {skill}
-              </span>
+          <div className="grid sm:grid-cols-2 gap-8">
+            {skillGroups.map((group) => (
+              <div key={group.label}>
+                <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-primary mb-3">
+                  {group.label}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="font-mono text-xs uppercase tracking-widest border border-border px-3 py-1.5 text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="font-heading text-lg font-bold uppercase tracking-[0.12em] mb-8">
+          Publications &amp; Datasets
+        </h2>
+        <div className="border border-border divide-y divide-border">
+          <div className="p-6 sm:p-8">
+            <p className="text-sm font-bold mb-1">
+              EAGLE-I Power Outage Data 2025
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Oak Ridge National Laboratory · Feb 2026
+            </p>
+          </div>
+          <div className="p-6 sm:p-8">
+            <p className="text-sm font-bold mb-1">
+              EAGLE-I Power Outage Data 2024
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Oak Ridge National Laboratory · Apr 2025
+            </p>
           </div>
         </div>
       </section>
