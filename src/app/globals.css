@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --font-sans: "Space Mono", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --font-heading: "Space Mono", ui-monospace, monospace;
+}
+
+:root {
+  --background: #020306;
+  --foreground: #ededed;
+  --card: #08090c;
+  --card-foreground: #ededed;
+  --muted: #171717;
+  --muted-foreground: #a3a3a3;
+  --primary: #4d7cff;
+  --primary-foreground: #ffffff;
+  --border: #1a1d24;
+  --input: #1a1a1a;
+  --ring: #4d7cff;
+  --accent: #1a1a1a;
+  --accent-foreground: #ededed;
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Space Mono", ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 48s linear infinite;
+}
+
+.maplibregl-popup-content {
+  background: var(--card) !important;
+  color: var(--foreground) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 0 !important;
+  padding: 8px 12px !important;
+  font-family: "Space Mono", monospace !important;
+  font-size: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+.maplibregl-popup-tip {
+  border-top-color: var(--card) !important;
+}
+
+.maplibregl-ctrl-group {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 0 !important;
+}
+
+.maplibregl-ctrl-group button {
+  background: var(--card) !important;
+  color: var(--foreground) !important;
+}
+
+.maplibregl-ctrl-group button:hover {
+  background: var(--muted) !important;
+}
+
+.maplibregl-ctrl-attrib {
+  display: none !important;
+}
