@@ -138,9 +138,9 @@ function latLonToVector3(
 ) {
   const latRad = (lat * Math.PI) / 180;
   const lngRad = (lng * Math.PI) / 180;
-  target.x = radius * Math.cos(latRad) * Math.cos(lngRad);
+  target.x = radius * Math.cos(latRad) * Math.sin(lngRad);
   target.y = radius * Math.sin(latRad);
-  target.z = radius * Math.cos(latRad) * Math.sin(lngRad);
+  target.z = radius * Math.cos(latRad) * Math.cos(lngRad);
 }
 
 function latLonToVec3(lng: number, lat: number, radius: number): Vector3 {

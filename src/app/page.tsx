@@ -45,13 +45,11 @@ export default function Home() {
         <div className="relative mx-auto flex w-full flex-col items-center pt-10 text-center sm:px-10 sm:pt-14">
           <div className="max-w-4xl">
             {/* Status bar */}
-            <div className="mb-10 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+            <div className="mb-10 flex items-center justify-center font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
               <span className="inline-flex items-center gap-2">
                 <span className="inline-block size-2 bg-emerald-500" />
                 Open to Consulting
               </span>
-              <span className="text-border">|</span>
-              <span>New York · 40°42&apos;N 74°00&apos;W</span>
             </div>
 
             {/* Tagline */}
@@ -79,7 +77,7 @@ export default function Home() {
             </p>
 
             {/* CTA */}
-            <div className="mt-6 flex w-full flex-col gap-3 sm:inline-flex sm:w-fit sm:flex-row sm:items-center">
+            <div className="mt-6 flex w-full flex-col gap-3 sm:inline-flex sm:w-fit sm:flex-row">
               <Link
                 href="#services"
                 className="group inline-flex w-full items-center justify-center gap-3 bg-gradient-to-br from-primary to-primary/80 px-7 py-4 font-mono text-[12px] uppercase tracking-[0.18em] text-primary-foreground transition-colors hover:from-primary/90 hover:to-primary/70 sm:w-auto sm:justify-start"
@@ -100,12 +98,6 @@ export default function Home() {
                   <path d="M5 12h14" />
                   <path d="m12 5 7 7-7 7" />
                 </svg>
-              </Link>
-              <Link
-                href="#projects"
-                className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground"
-              >
-                or see recent work →
               </Link>
             </div>
           </div>
