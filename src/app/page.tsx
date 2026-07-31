@@ -5,8 +5,6 @@
 // See docs/globe-implementation.md for the authoritative reference.
 // ──────────────────────────────────────────────────────────────────────────────
 
-import Link from "next/link";
-
 import HeroGlobeLoader from "@/components/hero-globe-loader";
 import { DubaiMap } from "@/components/dubai-map";
 
@@ -42,70 +40,38 @@ export default function Home() {
         }}
       >
 
-        <div className="relative mx-auto flex w-full flex-col items-center pt-10 text-center sm:px-10 sm:pt-14">
-          <div className="max-w-4xl">
-            {/* Status bar */}
-            <div className="mb-10 flex items-center justify-center font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
-              <span className="inline-flex items-center gap-2">
-                <span className="inline-block size-2 bg-emerald-500" />
-                Open to Consulting
-              </span>
-            </div>
-
-            {/* Tagline */}
-            <p className="mb-6 font-mono text-[11px] uppercase tracking-[0.2em] text-primary">
-              [ Geospatial Data Engineering · Infrastructure Resilience ·
-              Regional Market Access ]
-            </p>
-
-            {/* Name */}
-            <h1 className="font-heading text-5xl leading-[0.95] tracking-tight sm:text-7xl">
-              Radley Ciego
-            </h1>
-
+        <div className="relative mx-auto max-w-6xl sm:px-10">
+          <div className="relative z-10 max-w-[700px] pt-10 sm:pt-14">
             {/* Bio */}
-            <p className="mt-8 max-w-2xl mx-auto font-mono text-base leading-7 text-foreground">
-              I architect fault-tolerant data pipelines and the research
-              analysis behind them, turning raw geospatial data into actionable
-              infrastructure resilience insight, from government shapefiles to
-              published federal datasets. I currently work at{" "}
+            <p className="font-mono text-xl leading-snug text-foreground mb-5 md:text-2xl md:leading-[1.35] lg:text-[24px]">
+              I architect{" "}
+              <span className="text-primary">fault-tolerant data pipelines</span>
+              {" "}and the research analysis behind them, turning raw geospatial
+              data into actionable{" "}
+              <span className="text-primary">infrastructure resilience insight</span>
+              .
+            </p>
+            <p className="font-mono text-xl leading-snug text-foreground md:text-2xl md:leading-[1.35] lg:text-[24px]">
+              Currently at{" "}
               <span className="text-primary">
                 Oak Ridge National Laboratory
               </span>
-              . Previously, I helped maintain the official maps of{" "}
-              <span className="text-primary">New York City</span>.
+              , previously at the{" "}
+              <span className="text-primary">
+                NYC Department of City Planning
+              </span>{" "}
+              and the{" "}
+              <span className="text-primary">
+                Office of The Bronx Borough President
+              </span>
+              .
             </p>
-
-            {/* CTA */}
-            <div className="mt-6 flex w-full flex-col gap-3 sm:inline-flex sm:w-fit sm:flex-row">
-              <Link
-                href="#services"
-                className="group inline-flex w-full items-center justify-center gap-3 bg-gradient-to-br from-primary to-primary/80 px-7 py-4 font-mono text-[12px] uppercase tracking-[0.18em] text-primary-foreground transition-colors hover:from-primary/90 hover:to-primary/70 sm:w-auto sm:justify-start"
-              >
-                View Services
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="transition-transform group-hover:translate-x-1"
-                >
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
           </div>
-        </div>
 
-        {/* 3D Globe visualization */}
-        <div className="h-[60vh] lg:h-[70vh] w-full overflow-hidden relative mt-4">
-          <HeroGlobeLoader />
+          {/* 3D Globe visualization */}
+          <div className="h-[60vh] w-[100vw] relative mt-4 -mx-6 sm:-mx-10 md:w-[80%] md:mx-0 md:ml-auto md:-mt-12 lg:h-[70vh] lg:w-[90%] lg:ml-[10%] lg:-mt-[130px]">
+            <HeroGlobeLoader />
+          </div>
         </div>
       </section>
 

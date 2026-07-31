@@ -392,10 +392,48 @@ const HeroGlobe = () => {
     const renderer = new WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(width, height, false);
     renderer.setPixelRatio(pixelRatio);
-    renderer.domElement.style.width = "100%";
-    renderer.domElement.style.height = "100%";
     renderer.domElement.style.display = "block";
     container.appendChild(renderer.domElement);
+
+    /* ---- Extend canvas on desktop so rim has breathing room ---- */
+    const EXTRA_RIGHT_PX = 30;
+    const desktop = window.innerWidth >= 1024;
+    if (desktop) {
+      container.style.width = `calc(100% + ${EXTRA_RIGHT_PX}px)`;
+    }
+
+    /* ---- Update camera & renderer for actual (possibly wider) dimensions ---- */
+    const actualWidth = container.clientWidth;
+    const actualHeight = container.clientHeight;
+    camera.aspect = actualWidth / actualHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(actualWidth, actualHeight, false);
+    renderer.domElement.style.width = "100%";
+    renderer.domElement.style.height = "100%";
+
+    /* ---- Right-edge alignment (perspective-corrected) ---- */
+    const ATM_R = GLOBE_RADIUS + 0.12;
+
+    const setHorizontalPosition = () => {
+      const isDesktop = window.innerWidth >= 1024;
+      const vFovRad = (FOV * Math.PI) / 180;
+      const vHalfH = CAMERA_Z * Math.tan(vFovRad / 2);
+      const aspect = container.clientWidth / container.clientHeight;
+      const frustRight = vHalfH * aspect;
+
+      const zSil = (ATM_R * ATM_R) / CAMERA_Z;
+      const xSil = ATM_R * Math.sqrt(1 - (ATM_R * ATM_R) / (CAMERA_Z * CAMERA_Z));
+      const frustRightAtSil = frustRight * (CAMERA_Z - zSil) / CAMERA_Z;
+
+      const canvasW = container.clientWidth;
+      const expPx = isDesktop ? EXTRA_RIGHT_PX : 0;
+      const experiencePx = canvasW - expPx;
+      const clipAtExperience = (2 * experiencePx / canvasW) - 1;
+
+      const targetX = clipAtExperience * frustRightAtSil - xSil;
+      globePlacementGroup.position.x = Math.max(0, targetX);
+    };
+    setHorizontalPosition();
 
     /* ---- Depth Sphere ---- */
     const depthSphere = new Mesh(
@@ -933,11 +971,20 @@ const HeroGlobe = () => {
 
     /* ---- Resize ---- */
     const handleResize = () => {
+      const desktop = window.innerWidth >= 1024;
+      if (desktop) {
+        container.style.width = `calc(100% + ${EXTRA_RIGHT_PX}px)`;
+      } else {
+        container.style.width = "100%";
+      }
       const w = container.clientWidth;
       const h = container.clientHeight;
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
       renderer.setSize(w, h, false);
+      renderer.domElement.style.width = "100%";
+      renderer.domElement.style.height = "100%";
+      setHorizontalPosition();
     };
     window.addEventListener("resize", handleResize);
 
