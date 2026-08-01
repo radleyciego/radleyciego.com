@@ -162,7 +162,7 @@ export function DubaiMap() {
         aria-label="Dubai EV Charging Resilience Index – H3 Resolution 8 hex grid"
       >
         {/* Background */}
-        <rect width={viewW} height={viewH} fill="#060a14" />
+        <rect width={viewW} height={viewH} fill="#eef1f6" />
 
         {/* Hex grid */}
         <g dangerouslySetInnerHTML={{ __html: polygons.join("") }} />
@@ -171,7 +171,7 @@ export function DubaiMap() {
         <path
           d={coastPath}
           fill="none"
-          stroke="rgba(77,124,255,0.15)"
+          stroke="rgba(47,115,255,0.45)"
           strokeWidth="1.2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -180,10 +180,10 @@ export function DubaiMap() {
         {/* Vignette overlay */}
         <defs>
           <linearGradient id="dubai-vignette" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#060a14" stopOpacity="0.6" />
-            <stop offset="35%" stopColor="#060a14" stopOpacity="0" />
-            <stop offset="80%" stopColor="#060a14" stopOpacity="0" />
-            <stop offset="100%" stopColor="#060a14" stopOpacity="0.75" />
+            <stop offset="0%" stopColor="#eef1f6" stopOpacity="0.5" />
+            <stop offset="35%" stopColor="#eef1f6" stopOpacity="0" />
+            <stop offset="80%" stopColor="#eef1f6" stopOpacity="0" />
+            <stop offset="100%" stopColor="#eef1f6" stopOpacity="0.7" />
           </linearGradient>
         </defs>
         <rect width={viewW} height={viewH} fill="url(#dubai-vignette)" />
@@ -192,7 +192,7 @@ export function DubaiMap() {
         <text
           x="14"
           y="24"
-          fill="rgba(255,255,255,0.35)"
+          fill="rgba(29,39,64,0.55)"
           fontSize="9.5"
           fontFamily="monospace"
           letterSpacing="0.08em"
@@ -202,7 +202,7 @@ export function DubaiMap() {
         <text
           x="14"
           y="37"
-          fill="rgba(255,255,255,0.22)"
+          fill="rgba(29,39,64,0.4)"
           fontSize="7"
           fontFamily="monospace"
           letterSpacing="0.06em"
@@ -227,7 +227,7 @@ export function DubaiMap() {
           <text
             x={0}
             y={18}
-            fill="rgba(255,255,255,0.28)"
+            fill="rgba(29,39,64,0.5)"
             fontSize="6"
             fontFamily="monospace"
           >
@@ -236,7 +236,7 @@ export function DubaiMap() {
           <text
             x={RAMP.length * 16 - 44}
             y={18}
-            fill="rgba(255,255,255,0.28)"
+            fill="rgba(29,39,64,0.5)"
             fontSize="6"
             fontFamily="monospace"
           >

@@ -32,9 +32,9 @@ export default function Home() {
       <section
         className="relative overflow-hidden"
         style={{
-          backgroundColor: "#020306",
+          backgroundColor: "#f8f9fb",
           backgroundImage:
-            "linear-gradient(rgba(43,59,91,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(43,59,91,0.12) 1px, transparent 1px), radial-gradient(ellipse 72% 78% at 12% 40%, rgba(18,39,92,0.34) 0%, rgba(12,28,69,0.22) 35%, rgba(7,16,39,0.08) 62%, transparent 82%), radial-gradient(ellipse 58% 62% at 46% 48%, rgba(12,28,66,0.12) 0%, transparent 72%)",
+            "linear-gradient(rgba(125,145,180,0.16) 1px, transparent 1px), linear-gradient(90deg, rgba(125,145,180,0.16) 1px, transparent 1px), radial-gradient(ellipse 72% 78% at 12% 40%, rgba(154,178,216,0.28) 0%, rgba(176,194,224,0.16) 35%, rgba(205,218,236,0.08) 62%, transparent 82%), radial-gradient(ellipse 58% 62% at 46% 48%, rgba(185,200,225,0.14) 0%, transparent 72%)",
           backgroundSize: "48px 48px, 48px 48px, auto, auto",
           backgroundPosition: "0 0, 0 0, center, center",
         }}
@@ -44,27 +44,17 @@ export default function Home() {
           <div className="relative z-10 max-w-[700px] pt-10 sm:pt-14">
             {/* Bio */}
             <p className="font-mono text-xl leading-snug text-foreground mb-5 md:text-2xl md:leading-[1.35] lg:text-[24px]">
-              I architect{" "}
-              <span className="text-primary">fault-tolerant data pipelines</span>
-              {" "}and the research analysis behind them, turning raw geospatial
-              data into actionable{" "}
-              <span className="text-primary">infrastructure resilience insight</span>
-              .
+              I architect fault-tolerant data pipelines and the research analysis
+              behind them, turning raw geospatial data into actionable
+              infrastructure resilience insight.
             </p>
             <p className="font-mono text-xl leading-snug text-foreground md:text-2xl md:leading-[1.35] lg:text-[24px]">
               Currently at{" "}
               <span className="text-primary">
                 Oak Ridge National Laboratory
               </span>
-              , previously at the{" "}
-              <span className="text-primary">
-                NYC Department of City Planning
-              </span>{" "}
-              and the{" "}
-              <span className="text-primary">
-                Office of The Bronx Borough President
-              </span>
-              .
+              , previously at the NYC Department of City Planning and the
+              Office of The Bronx Borough President.
             </p>
           </div>
 

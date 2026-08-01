@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import "tailwindcss";
 
 @theme inline {
@@ -15,25 +15,25 @@
   --color-ring: var(--ring);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --font-sans: "Space Mono", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Space Mono", ui-monospace, monospace;
-  --font-heading: "Space Mono", ui-monospace, monospace;
+  --font-sans: "Cousine", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --font-mono: "Cousine", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --font-heading: "Cousine", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 }
 
 :root {
-  --background: #020306;
-  --foreground: #ededed;
-  --card: #08090c;
-  --card-foreground: #ededed;
-  --muted: #171717;
-  --muted-foreground: #a3a3a3;
-  --primary: #4d7cff;
+  --background: #f8f9fb;
+  --foreground: #1d2740;
+  --card: #ffffff;
+  --card-foreground: #1d2740;
+  --muted: #eef0f4;
+  --muted-foreground: #5a6478;
+  --primary: #2f73ff;
   --primary-foreground: #ffffff;
-  --border: #1a1d24;
-  --input: #1a1a1a;
-  --ring: #4d7cff;
-  --accent: #1a1a1a;
-  --accent-foreground: #ededed;
+  --border: #d9dee8;
+  --input: #d9dee8;
+  --ring: #2f73ff;
+  --accent: #eef0f4;
+  --accent-foreground: #1d2740;
 }
 
 * {
@@ -43,7 +43,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "Space Mono", ui-sans-serif, system-ui, sans-serif;
+  font-family: "Cousine", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 }
 
 ::selection {
@@ -72,9 +72,9 @@ body {
   border: 1px solid var(--border) !important;
   border-radius: 0 !important;
   padding: 8px 12px !important;
-  font-family: "Space Mono", monospace !important;
+  font-family: "Cousine", monospace !important;
   font-size: 12px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+  box-shadow: 0 4px 12px rgba(29, 39, 64, 0.18) !important;
 }
 
 .maplibregl-popup-tip {

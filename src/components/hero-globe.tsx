@@ -22,7 +22,6 @@ import {
   Float32BufferAttribute,
   Vector3,
   LineBasicMaterial,
-  AdditiveBlending,
   NormalBlending,
 } from "three";
 
@@ -48,9 +47,9 @@ const INERTIA_DAMPING = 0.92;
 const MAX_ANGULAR_VELOCITY = 0.8;
 const AUTO_RESUME_DELAY = 2200;
 
-const ARC_COLOR_CORE = 0x174bd8;
-const ARC_COLOR_ACTIVE = 0x2457ef;
-const ARC_COLOR_GLOW = 0x102d88;
+const ARC_COLOR_CORE = 0x2f73ff;
+const ARC_COLOR_ACTIVE = 0x4d8dff;
+const ARC_COLOR_GLOW = 0x1e5cd8;
 
 const MIN_ARC_ELEVATION = 0.08;
 const MAX_ARC_ELEVATION = 0.62;
@@ -218,8 +217,8 @@ varying vec3 vNormal;
 varying vec3 vViewDir;
 void main() {
   float fresnel = pow(1.0 - max(dot(vNormal, vViewDir), 0.0), 4.0);
-  float intensity = fresnel * 0.18;
-  gl_FragColor = vec4(0.2, 0.4, 1.0, intensity);
+  float intensity = fresnel * 0.34;
+  gl_FragColor = vec4(0.42, 0.6, 1.0, intensity);
 }
 `;
 
@@ -230,8 +229,13 @@ void main() {
 const landVertexShader = `
 attribute float size;
 uniform float uPixelRatio;
+varying float vFront;
 void main() {
   vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+  vec4 mvCenter = modelViewMatrix * vec4(0.0, 0.0, 0.0, 1.0);
+  vec3 n = normalize(mvPosition.xyz - mvCenter.xyz);
+  vec3 v = normalize(-mvPosition.xyz);
+  vFront = mix(0.55, 1.0, clamp(dot(n, v), 0.0, 1.0));
   gl_PointSize = size * uPixelRatio;
   gl_Position = projectionMatrix * mvPosition;
 }
@@ -240,12 +244,13 @@ void main() {
 const landFragmentShader = `
 uniform vec3 uColor;
 uniform float uOpacity;
+varying float vFront;
 void main() {
   vec2 p = gl_PointCoord - vec2(0.5);
   float d = length(p);
   if (d > 0.5) discard;
   float alpha = 1.0 - smoothstep(0.43, 0.5, d);
-  gl_FragColor = vec4(uColor, alpha * uOpacity);
+  gl_FragColor = vec4(uColor, alpha * uOpacity * vFront);
 }
 `;
 
@@ -456,7 +461,7 @@ const HeroGlobe = () => {
     );
 
     const landSizeAttr = new Float32Array(landCoords.length / 2);
-    landSizeAttr.fill(1.4);
+    landSizeAttr.fill(1.55);
     landGeometry.setAttribute("size", new Float32BufferAttribute(landSizeAttr, 1));
 
     const landPoints = new Points(
@@ -465,8 +470,8 @@ const HeroGlobe = () => {
         vertexShader: landVertexShader,
         fragmentShader: landFragmentShader,
         uniforms: {
-          uColor: { value: new Vector3(0.533, 0.580, 0.678) },
-          uOpacity: { value: 0.5 },
+          uColor: { value: new Vector3(0.34, 0.44, 0.59) },
+          uOpacity: { value: 0.7 },
           uPixelRatio: { value: pixelRatio },
         },
         transparent: true,
@@ -503,7 +508,7 @@ const HeroGlobe = () => {
         vertexShader: nodeCoreVertexShader,
         fragmentShader: nodeCoreFragmentShader,
         uniforms: {
-          uColor: { value: new Vector3(0.09, 0.28, 0.91) },
+          uColor: { value: new Vector3(0.18, 0.45, 1.0) },
           uOpacity: { value: 0.98 },
           uPixelRatio: { value: pixelRatio },
         },
@@ -532,14 +537,14 @@ const HeroGlobe = () => {
         vertexShader: nodeHaloVertexShader,
         fragmentShader: nodeHaloFragmentShader,
         uniforms: {
-          uColor: { value: new Vector3(0.09, 0.28, 0.91) },
-          uOpacity: { value: 0.09 },
+          uColor: { value: new Vector3(0.18, 0.45, 1.0) },
+          uOpacity: { value: 0.16 },
           uPixelRatio: { value: pixelRatio },
         },
         transparent: true,
         depthTest: true,
         depthWrite: false,
-        blending: AdditiveBlending,
+        blending: NormalBlending,
       })
     );
     rotatingEarthGroup.add(nodeHaloPoints);
@@ -599,7 +604,7 @@ const HeroGlobe = () => {
           depthTest: true,
           depthWrite: false,
           linewidth: 1,
-          blending: AdditiveBlending,
+          blending: NormalBlending,
         })
       );
 
@@ -635,7 +640,7 @@ const HeroGlobe = () => {
         vertexShader: signalCoreVertexShader,
         fragmentShader: signalCoreFragmentShader,
         uniforms: {
-          uColor: { value: new Vector3(0.19, 0.37, 1.0) },
+          uColor: { value: new Vector3(0.22, 0.48, 1.0) },
           uOpacity: { value: 0.95 },
           uPixelRatio: { value: pixelRatio },
         },
@@ -663,14 +668,14 @@ const HeroGlobe = () => {
         vertexShader: signalHaloVertexShader,
         fragmentShader: signalHaloFragmentShader,
         uniforms: {
-          uColor: { value: new Vector3(0.19, 0.37, 1.0) },
-          uOpacity: { value: 0.09 },
+          uColor: { value: new Vector3(0.22, 0.48, 1.0) },
+          uOpacity: { value: 0.16 },
           uPixelRatio: { value: pixelRatio },
         },
         transparent: true,
         depthTest: true,
         depthWrite: false,
-        blending: AdditiveBlending,
+        blending: NormalBlending,
       })
     );
     rotatingEarthGroup.add(signalHaloPoints);
@@ -685,7 +690,7 @@ const HeroGlobe = () => {
         transparent: true,
         depthWrite: false,
         side: 1,
-        blending: AdditiveBlending,
+        blending: NormalBlending,
       })
     );
     atmosphereMesh.renderOrder = 1;
@@ -1053,7 +1058,7 @@ const HeroGlobe = () => {
         style={{
           height: "55%",
           background:
-            "linear-gradient(to bottom, rgba(2,3,6,0) 0%, rgba(2,3,6,0.3) 25%, rgba(2,3,6,0.75) 55%, rgba(2,3,6,0.95) 80%, #020306 100%)",
+            "linear-gradient(to bottom, rgba(248,249,251,0) 0%, rgba(248,249,251,0.35) 25%, rgba(248,249,251,0.75) 55%, rgba(248,249,251,0.95) 80%, #f8f9fb 100%)",
         }}
       />
     </>
