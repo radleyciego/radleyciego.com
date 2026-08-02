@@ -8,23 +8,6 @@
 import HeroGlobeLoader from "@/components/hero-globe-loader";
 import { DubaiMap } from "@/components/dubai-map";
 
-
-const skills = [
-  "PREFECT",
-  "AIRFLOW",
-  "POSTGIS",
-  "DUCKDB",
-  "GEOPARQUET",
-  "POLARS",
-  "GEOPANDAS",
-  "AWS S3",
-  "DOCKER",
-  "KUBERNETES",
-  "PYTHON",
-  "SQL",
-  "BASH",
-];
-
 export default function Home() {
   return (
     <>
@@ -32,21 +15,18 @@ export default function Home() {
       <section
         className="relative overflow-hidden"
         style={{
-          backgroundColor: "#f8f9fb",
           backgroundImage:
-            "linear-gradient(rgba(125,145,180,0.16) 1px, transparent 1px), linear-gradient(90deg, rgba(125,145,180,0.16) 1px, transparent 1px), radial-gradient(ellipse 72% 78% at 12% 40%, rgba(154,178,216,0.28) 0%, rgba(176,194,224,0.16) 35%, rgba(205,218,236,0.08) 62%, transparent 82%), radial-gradient(ellipse 58% 62% at 46% 48%, rgba(185,200,225,0.14) 0%, transparent 72%)",
-          backgroundSize: "48px 48px, 48px 48px, auto, auto",
-          backgroundPosition: "0 0, 0 0, center, center",
+            "radial-gradient(ellipse 72% 78% at 12% 40%, rgba(154,178,216,0.28) 0%, rgba(176,194,224,0.16) 35%, rgba(205,218,236,0.08) 62%, transparent 82%), radial-gradient(ellipse 58% 62% at 46% 48%, rgba(185,200,225,0.14) 0%, transparent 72%)",
+          backgroundSize: "auto, auto",
+          backgroundPosition: "center, center",
         }}
       >
-
-        <div className="relative mx-auto max-w-6xl sm:px-10">
+        <div className="container-site relative">
           <div className="relative z-10 max-w-[700px] pt-10 sm:pt-14">
             {/* Bio */}
             <p className="font-mono text-xl leading-snug text-foreground mb-5 md:text-2xl md:leading-[1.35] lg:text-[24px]">
-              I architect fault-tolerant data pipelines and the research analysis
-              behind them, turning raw geospatial data into actionable
-              infrastructure resilience insight.
+              I build geospatial data systems that turn complex data into
+              reliable infrastructure insight.
             </p>
             <p className="font-mono text-xl leading-snug text-foreground md:text-2xl md:leading-[1.35] lg:text-[24px]">
               Currently at{" "}
@@ -59,90 +39,22 @@ export default function Home() {
           </div>
 
           {/* 3D Globe visualization */}
-          <div className="h-[60vh] w-[100vw] relative mt-4 -mx-6 sm:-mx-10 md:w-[80%] md:mx-0 md:ml-auto md:-mt-12 lg:h-[70vh] lg:w-[90%] lg:ml-[10%] lg:-mt-[130px]">
-            <HeroGlobeLoader />
-          </div>
-        </div>
-      </section>
-
-      {/* Skills ticker */}
-      <div className="relative border-y border-border bg-background">
-        <div className="mx-auto max-w-6xl overflow-hidden">
-          <div className="ticker-track whitespace-nowrap py-4">
-            {[...skills, ...skills].map((skill, i) => (
-              <span
-                key={`${skill}-${i}`}
-                className="inline-flex items-center gap-6 px-6 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground"
-              >
-                {skill}
-                <span className="text-primary">◆</span>
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Services */}
-      <section id="services" className="mx-auto max-w-6xl px-6 py-20 sm:px-10">
-        <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.2em] text-primary">
-          [ What I Do ]
-        </p>
-        <h2 className="font-heading text-4xl leading-tight tracking-tight sm:text-5xl mb-16">
-          Services
-        </h2>
-
-        <div className="grid sm:grid-cols-2 gap-8">
-          <div className="border border-border p-6 sm:p-8">
-            <h3 className="font-heading text-sm font-bold uppercase tracking-[0.08em] mb-3">
-              Infrastructure Resilience Assessment
-            </h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Quantitative risk scoring for critical infrastructure against
-              climate, seismic, and operational stress scenarios.
-            </p>
-          </div>
-          <div className="border border-border p-6 sm:p-8">
-            <h3 className="font-heading text-sm font-bold uppercase tracking-[0.08em] mb-3">
-              Custom Geospatial Data Pipelines
-            </h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              End-to-end ETL/ELT design — from raw source ingestion through
-              schema validation to analytics-ready storage.
-            </p>
-          </div>
-          <div className="border border-border p-6 sm:p-8">
-            <h3 className="font-heading text-sm font-bold uppercase tracking-[0.08em] mb-3">
-              GIS Modernization &amp; Data Governance
-            </h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Migration from legacy desktop GIS to cloud-native spatial data
-              infrastructure with versioned schemas.
-            </p>
-          </div>
-          <div className="border border-border p-6 sm:p-8">
-            <h3 className="font-heading text-sm font-bold uppercase tracking-[0.08em] mb-3">
-              Regional Infrastructure Market Analysis
-            </h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Working proficiency in Arabic and Spanish supports source review
-              and stakeholder engagement in MENA and Latin American
-              infrastructure markets underserved by English-language analysis.
-            </p>
+          <div className="pt-[7.3vh] lg:pt-[8.5vh]">
+            <div className="globe-stage h-[60vh] relative -mt-[11.5px] sm:mt-4 md:-mt-12 lg:h-[70vh] lg:-mt-[130px]">
+              <HeroGlobeLoader />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Projects section */}
-      <section id="projects" className="mx-auto max-w-6xl px-6 py-20 sm:px-10 border-t border-border">
-        <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.2em] text-primary">
-          [ Selected Projects ]
-        </p>
+      <section id="projects" className="container-site py-20">
         <h2 className="font-heading text-4xl leading-tight tracking-tight sm:text-5xl mb-16">
           Projects
         </h2>
 
         {/* Project card */}
-        <article className="border border-border">
+        <article className="border border-border bg-white">
           <div className="grid sm:grid-cols-[1fr_1fr]">
             {/* Text side */}
             <div className="p-8 sm:p-10 flex flex-col justify-between">
@@ -209,12 +121,9 @@ export default function Home() {
         </article>
 
         {/* Placeholder for future projects */}
-        <div className="border border-dashed border-border mt-8 p-8 text-center">
+        <div className="border border-dashed border-border bg-white mt-8 p-8 text-center">
           <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
             More projects coming soon
-          </p>
-          <p className="text-sm text-muted-foreground mt-2">
-            Geospatial data pipeline work, additional case studies in development
           </p>
         </div>
       </section>

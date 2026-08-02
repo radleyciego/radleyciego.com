@@ -40,30 +40,91 @@
   border-color: var(--border);
 }
 
+/* Site-wide background — continuous technical grid. Applied to <body> so it
+   spans the full document height and scrolls naturally with the page (no seam
+   between hero, Projects, or footer). Base + grid values mirror the approved
+   hero treatment; the hero additionally layers its atmospheric radial washes
+   on top (see src/app/page.tsx). */
 body {
-  background: var(--background);
+  background-color: #f8f9fb;
+  background-image:
+    linear-gradient(rgba(125, 145, 180, 0.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(125, 145, 180, 0.22) 1px, transparent 1px);
+  background-size: 48px 48px, 48px 48px;
+  background-position: 0 0, 0 0;
   color: var(--foreground);
   font-family: "Cousine", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+/* Shared site container — wider than the legacy max-w-6xl */
+.container-site {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1320px;
+  padding-inline: 1.25rem; /* 20px */
+}
+@media (min-width: 640px) {
+  .container-site {
+    padding-inline: 1.75rem; /* 28px */
+  }
+}
+@media (min-width: 1024px) {
+  .container-site {
+    padding-inline: 2rem; /* 32px */
+  }
+}
+@media (min-width: 1440px) {
+  .container-site {
+    padding-inline: 3rem; /* 48px */
+  }
+}
+
+/* Hero globe stage — width/scale pinned to the viewport so it does not shift
+   when the shared container widens. At ≥1152 the right edge of the stage tracks
+   the rendered right edge of the About nav label (the atmosphere rim is aligned
+   to the stage's right edge inside hero-globe.tsx). */
+.globe-stage {
+  width: 100vw;
+  margin-left: -44px;
+  margin-right: 0;
+}
+@media (min-width: 640px) {
+  .globe-stage {
+    margin-left: -28px;
+  }
+}
+@media (min-width: 768px) {
+  .globe-stage {
+    width: calc(0.8 * 100vw - 64px);
+    margin-left: calc(0.2 * 100vw - 4px);
+  }
+}
+@media (min-width: 1024px) {
+  .globe-stage {
+    width: calc(0.9 * 100vw - 72px);
+    margin-left: calc(0.1 * 100vw);
+  }
+}
+@media (min-width: 1152px) {
+  .globe-stage {
+    width: 964.8px;
+    margin-left: calc(100vw - 1028.8px);
+  }
+}
+@media (min-width: 1320px) {
+  .globe-stage {
+    margin-left: 291.2px;
+  }
+}
+@media (min-width: 1440px) {
+  .globe-stage {
+    margin-left: 259.2px;
+  }
 }
 
 ::selection {
   background: var(--primary);
   color: var(--primary-foreground);
-}
-
-@keyframes ticker-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.ticker-track {
-  display: flex;
-  width: max-content;
-  animation: ticker-scroll 48s linear infinite;
 }
 
 .maplibregl-popup-content {

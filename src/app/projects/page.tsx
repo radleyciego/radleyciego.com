@@ -9,15 +9,12 @@ const DubaiMap = dynamic(
 
 export default function Projects() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-20 sm:px-10">
-      <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.2em] text-primary">
-        [ Selected Projects ]
-      </p>
+    <div className="container-site py-20">
       <h1 className="font-heading text-4xl leading-tight tracking-tight sm:text-5xl mb-16">
         Projects
       </h1>
 
-      <article className="border border-border">
+      <article className="border border-border bg-white">
         <div className="grid sm:grid-cols-[1fr_1fr]">
           <div className="p-8 sm:p-10 flex flex-col justify-between">
             <div>
@@ -80,12 +77,9 @@ export default function Projects() {
         </div>
       </article>
 
-      <div className="border border-dashed border-border mt-8 p-8 text-center">
+      <div className="border border-dashed border-border bg-white mt-8 p-8 text-center">
         <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
           More projects coming soon
-        </p>
-        <p className="text-sm text-muted-foreground mt-2">
-          Geospatial data pipeline work, additional case studies in development
         </p>
       </div>
     </div>

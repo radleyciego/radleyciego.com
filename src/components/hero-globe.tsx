@@ -37,6 +37,7 @@ const ARC_START_RADIUS = GLOBE_RADIUS + 0.035;
 const EARTH_ROTATION_SPEED = (Math.PI * 2) / 45;
 const CAMERA_Z = 20.2;
 const FOV = 32;
+const CAMERA_LOOK_TILT_DEG = 4;
 const MAX_DPR = 1.75;
 const GLOBE_Y_OFFSET = -1.6;
 
@@ -393,6 +394,11 @@ const HeroGlobe = () => {
 
     const camera = new PerspectiveCamera(FOV, width / height, 0.1, 200);
     camera.position.z = CAMERA_Z;
+    camera.lookAt(
+      0,
+      -CAMERA_Z * Math.tan((CAMERA_LOOK_TILT_DEG * Math.PI) / 180),
+      0
+    );
 
     const renderer = new WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(width, height, false);
@@ -1051,15 +1057,6 @@ const HeroGlobe = () => {
       <div
         ref={containerRef}
         style={{ width: "100%", height: "100%" }}
-      />
-      {/* Lower haze — covers bottom of globe, fades upward into transparency */}
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0"
-        style={{
-          height: "55%",
-          background:
-            "linear-gradient(to bottom, rgba(248,249,251,0) 0%, rgba(248,249,251,0.35) 25%, rgba(248,249,251,0.75) 55%, rgba(248,249,251,0.95) 80%, #f8f9fb 100%)",
-        }}
       />
     </>
   );

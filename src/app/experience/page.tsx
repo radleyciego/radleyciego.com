@@ -63,7 +63,7 @@ export default function Experience() {
   ];
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-20 sm:px-10">
+    <div className="container-site py-20">
       <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.2em] text-primary">
         [ Selected Experience ]
       </p>
