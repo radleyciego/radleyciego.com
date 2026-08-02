@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Nav } from "@/components/nav";
+import { SocialIconLinks } from "@/components/social-icons";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://radleyciego.com"),
@@ -57,36 +58,14 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <footer className="border-t border-border">
           <div className="container-site py-12">
-            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-8">
-              <div>
-                <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-primary mb-4">
-                  Let&apos;s Talk
-                </p>
-                <a
-                  href="mailto:radleykc@gmail.com"
-                  className="font-mono text-sm text-foreground transition-colors hover:text-primary"
-                >
-                  radleykc@gmail.com
-                </a>
-              </div>
-              <div className="flex gap-8 font-mono text-[11px] uppercase tracking-[0.18em]">
-                <a
-                  href="https://www.linkedin.com/in/radleykc/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground transition-colors hover:text-primary"
-                >
-                  LinkedIn
-                </a>
-                <a
-                  href="https://substack.com/@radleyciego"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground transition-colors hover:text-primary"
-                >
-                  Substack
-                </a>
-              </div>
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+              <a
+                href="mailto:radleykc@gmail.com"
+                className="font-mono text-sm text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary"
+              >
+                Contact
+              </a>
+              <SocialIconLinks />
             </div>
           </div>
         </footer>

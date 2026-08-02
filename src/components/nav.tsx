@@ -28,7 +28,11 @@ export function Nav() {
           </Link>
           <Link
             href="/about"
-            className="text-foreground transition-colors hover:text-primary"
+            className={`transition-colors ${
+              pathname === "/about"
+                ? "text-primary"
+                : "text-foreground hover:text-primary"
+            }`}
           >
             About
           </Link>
