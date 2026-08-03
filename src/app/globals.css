@@ -84,13 +84,13 @@ body {
    the rendered right edge of the About nav label (the atmosphere rim is aligned
    to the stage's right edge inside hero-globe.tsx). */
 .globe-stage {
-  width: 100vw;
-  margin-left: -44px;
+  width: 86vw;
+  margin-left: calc(7vw - 20px);
   margin-right: 0;
 }
 @media (min-width: 640px) {
   .globe-stage {
-    margin-left: -28px;
+    margin-left: calc(7vw - 28px);
   }
 }
 @media (min-width: 768px) {

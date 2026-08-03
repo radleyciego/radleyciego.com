@@ -39,8 +39,8 @@ export default function Home() {
           </div>
 
           {/* 3D Globe visualization */}
-          <div className="pt-[7.3vh] lg:pt-[8.5vh]">
-            <div className="globe-stage h-[60vh] relative -mt-[11.5px] sm:mt-4 md:-mt-12 lg:h-[70vh] lg:-mt-[130px]">
+          <div className="pt-14 md:pt-[7.3vh] lg:pt-[8.5vh]">
+            <div className="globe-stage h-[76vw] relative -mt-[11.5px] sm:mt-4 md:h-[60vh] md:-mt-12 lg:h-[70vh] lg:-mt-[130px]">
               <HeroGlobeLoader />
             </div>
           </div>
