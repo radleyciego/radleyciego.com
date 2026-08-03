@@ -20,8 +20,8 @@ export default function About() {
           <div className="space-y-6 max-w-[38rem]">
             <p className="font-mono text-lg leading-[1.6] text-foreground md:text-xl md:leading-[1.55]">
               I&apos;m a research and development geospatial data engineer from
-              the Bronx, working within geoinformatics engineering across
-              geospatial systems architecture, infrastructure resilience, and
+              the Bronx, currently at Oak Ridge National Laboratory, where I
+              work on infrastructure resilience, evacuation modeling, and
               applied geographic research.
             </p>
             <p className="font-mono text-lg leading-[1.6] text-foreground md:text-xl md:leading-[1.55]">
