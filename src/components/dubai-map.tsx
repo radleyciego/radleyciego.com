@@ -195,9 +195,8 @@ export function DubaiMap() {
           fill="rgba(29,39,64,0.55)"
           fontSize="9.5"
           fontFamily="monospace"
-          letterSpacing="0.08em"
         >
-          DUBAI
+          Dubai
         </text>
         <text
           x="14"

@@ -20,10 +20,10 @@ export const metadata: Metadata = {
     siteName: "Radley Ciego",
     images: [
       {
-        url: "/images/radley-ciego-title-card.png",
-        width: 1672,
-        height: 941,
-        alt: "Radley Ciego, geospatial data engineer",
+        url: "/images/radley-ciego-og.png",
+        width: 1200,
+        height: 630,
+        alt: "Radley Ciego",
       },
     ],
   },
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Radley Ciego — Geospatial Data Engineer & Infrastructure Resilience Consultant",
     description:
       "I build fault-tolerant data pipelines that transform raw geospatial data into actionable infrastructure resilience insights.",
-    images: ["/images/radley-ciego-title-card.png"],
+    images: ["/images/radley-ciego-og.png"],
   },
   icons: {
     icon: [
@@ -59,12 +59,6 @@ export default function RootLayout({
         <footer className="border-t border-border">
           <div className="container-site py-12">
             <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
-              <a
-                href="mailto:radleykc@gmail.com"
-                className="font-mono text-sm text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary"
-              >
-                Contact
-              </a>
               <SocialIconLinks />
             </div>
           </div>

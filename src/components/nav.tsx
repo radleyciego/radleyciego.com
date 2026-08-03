@@ -36,6 +36,12 @@ export function Nav() {
           >
             About
           </Link>
+          <Link
+            href="/about#contact"
+            className="text-foreground transition-colors hover:text-primary"
+          >
+            Contact
+          </Link>
         </div>
       </nav>
     </header>

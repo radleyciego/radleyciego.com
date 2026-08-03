@@ -62,7 +62,7 @@ export default function Home() {
                 <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-primary mb-4 block">
                   01
                 </span>
-                <h3 className="font-heading text-xl font-bold uppercase tracking-[0.05em] mb-4">
+                <h3 className="font-heading text-xl font-bold mb-4">
                   Dubai EV Charging Resilience Index
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-md">
@@ -77,8 +77,8 @@ export default function Home() {
 
                 {/* Data foundation */}
                 <div className="border border-border bg-card p-4 mb-6">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-primary mb-3">
-                    Built On
+                  <p className="font-mono text-[10px] text-primary mb-3">
+                    Built on
                   </p>
                   <p className="font-mono text-[10px] text-muted-foreground leading-relaxed">
                     DEWA Green Charger Network · Open Charge Map · Dubai Pulse ·
@@ -89,7 +89,7 @@ export default function Home() {
 
               <a
                 href="mailto:radleykc@gmail.com"
-                className="inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.18em] text-foreground transition-colors hover:text-primary group"
+                className="inline-flex items-center gap-2 font-mono text-[12px] text-foreground transition-colors hover:text-primary group"
               >
                 Request a briefing
                 <svg
@@ -113,8 +113,8 @@ export default function Home() {
             {/* Visual side — live Dubai map */}
             <div className="relative border-t sm:border-t-0 sm:border-l border-border bg-card min-h-[300px]">
               <DubaiMap />
-              <span className="absolute top-4 right-4 font-mono text-[10px] uppercase tracking-widest border border-muted-foreground/30 text-muted-foreground px-3 py-1 z-10">
-                In Development
+              <span className="absolute top-4 right-4 font-mono text-[10px] border border-muted-foreground/30 text-muted-foreground px-3 py-1 z-10">
+                In development
               </span>
             </div>
           </div>
@@ -122,7 +122,7 @@ export default function Home() {
 
         {/* Placeholder for future projects */}
         <div className="border border-dashed border-border bg-white mt-8 p-8 text-center">
-          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+          <p className="font-mono text-[11px] text-muted-foreground">
             More projects coming soon
           </p>
         </div>

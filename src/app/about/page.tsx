@@ -19,30 +19,19 @@ export default function About() {
 
           <div className="space-y-6 max-w-[38rem]">
             <p className="font-mono text-lg leading-[1.6] text-foreground md:text-xl md:leading-[1.55]">
-              I am a research geospatial data engineer from the Bronx working
-              across spatial data systems, infrastructure resilience, climate
-              risk, and applied geographic research.
+              I&apos;m a research and development geospatial data engineer from
+              the Bronx, working within geoinformatics engineering across
+              geospatial systems architecture, infrastructure resilience, and
+              applied geographic research.
             </p>
             <p className="font-mono text-lg leading-[1.6] text-foreground md:text-xl md:leading-[1.55]">
-              My career began in neighborhood economic development at the Long
-              Island City Partnership, where I worked with small businesses,
-              property owners, and real estate stakeholders in the Sunnyside
-              Industrial Business Zone. I later moved into authoritative
-              mapping at the Office of the Bronx Borough President and the NYC
-              Department of City Planning.
-            </p>
-            <p className="font-mono text-lg leading-[1.6] text-foreground md:text-xl md:leading-[1.55]">
-              Today, I work at Oak Ridge National Laboratory, where I develop
-              geospatial data pipelines and research methods for infrastructure
-              resilience, evacuation modeling, and national-scale critical
-              infrastructure analysis. I speak Arabic and Spanish, and bring an
-              international perspective shaped by travel and study in Morocco
-              and Jordan.
-            </p>
-            <p className="font-mono text-lg leading-[1.6] text-foreground md:text-xl md:leading-[1.55]">
-              I work with public agencies, utilities, infrastructure
-              organizations, and research teams that need to turn fragmented
-              spatial data into reliable decision systems.
+              My path here ran through neighborhood economic development and
+              authoritative city mapping at the Office of the Bronx Borough
+              President and the NYC Department of City Planning. That work
+              shaped how I think about turning fragmented spatial data into
+              decisions people can act on. I hold an MS in Geoinformatics,
+              speak Arabic and Spanish, and bring an international perspective
+              shaped by time in Morocco and Jordan.
             </p>
           </div>
 
@@ -71,7 +60,22 @@ export default function About() {
         </div>
       </section>
 
-      <section className="mt-24">
+      <section className="mt-12 md:mt-16">
+        <h2 className="font-heading text-4xl leading-tight tracking-tight sm:text-5xl mb-6">
+          Focus Areas
+        </h2>
+        <ul className="max-w-[38rem] space-y-2 font-mono text-lg leading-[1.6] text-foreground md:text-xl md:leading-[1.55]">
+          <li>Geospatial Systems Architecture</li>
+          <li>Geospatial Data Pipelines</li>
+          <li>Infrastructure Resilience Modeling</li>
+          <li>Evacuation and Emergency Response Modeling</li>
+          <li>Critical Infrastructure Analysis</li>
+          <li>Climate Risk and Hazard Data</li>
+          <li>Authoritative and Municipal Mapping</li>
+        </ul>
+      </section>
+
+      <section id="contact" className="mt-16 md:mt-20">
         <h2 className="font-heading text-4xl leading-tight tracking-tight sm:text-5xl mb-6">
           Contact
         </h2>
