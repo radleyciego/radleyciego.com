@@ -62,7 +62,7 @@ export function ContactForm() {
 
       <div className="mt-6">
         <label htmlFor="message" className={labelClass}>
-          What are you working on?
+          Message
         </label>
         <textarea
           id="message"
