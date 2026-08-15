@@ -48,10 +48,12 @@
 body {
   background-color: #f8f9fb;
   background-image:
+    radial-gradient(ellipse 72vw 78vh at 12% 40vh, rgba(154,178,216,0.28) 0%, rgba(176,194,224,0.16) 35%, rgba(205,218,236,0.08) 62%, transparent 82%),
+    radial-gradient(ellipse 58vw 62vh at 46% 48vh, rgba(185,200,225,0.14) 0%, transparent 72%),
     linear-gradient(rgba(125, 145, 180, 0.22) 1px, transparent 1px),
     linear-gradient(90deg, rgba(125, 145, 180, 0.22) 1px, transparent 1px);
-  background-size: 48px 48px, 48px 48px;
-  background-position: 0 0, 0 0;
+  background-size: auto, auto, 48px 48px, 48px 48px;
+  background-position: 0 0, 0 0, 0 0, 0 0;
   color: var(--foreground);
   font-family: "Cousine", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 }

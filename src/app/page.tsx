@@ -12,21 +12,12 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section
-        className="relative overflow-hidden"
-        style={{
-          backgroundImage:
-            "radial-gradient(ellipse 72% 78% at 12% 40%, rgba(154,178,216,0.28) 0%, rgba(176,194,224,0.16) 35%, rgba(205,218,236,0.08) 62%, transparent 82%), radial-gradient(ellipse 58% 62% at 46% 48%, rgba(185,200,225,0.14) 0%, transparent 72%)",
-          backgroundSize: "auto, auto",
-          backgroundPosition: "center, center",
-        }}
-      >
+      <section className="relative overflow-hidden">
         <div className="container-site relative">
           <div className="relative z-10 max-w-[700px] pt-10 sm:pt-14">
             {/* Bio */}
             <p className="font-mono text-xl leading-snug text-foreground mb-5 md:text-2xl md:leading-[1.35] lg:text-[24px]">
-              I build geospatial data systems that turn complex data into
-              reliable infrastructure insight.
+              I build data infrastructure for complex spatial problems.
             </p>
             <p className="font-mono text-xl leading-snug text-foreground md:text-2xl md:leading-[1.35] lg:text-[24px]">
               Currently at{" "}

@@ -21,8 +21,8 @@ export default function About() {
             <p className="font-mono text-lg leading-[1.6] text-foreground md:text-xl md:leading-[1.55]">
               I&apos;m a research and development geospatial data engineer from
               the Bronx, currently at Oak Ridge National Laboratory, where I
-              work on infrastructure resilience, evacuation modeling, and
-              applied geographic research.
+              build data systems and research workflows for infrastructure
+              resilience, evacuation modeling, and applied geographic research.
             </p>
             <p className="font-mono text-lg leading-[1.6] text-foreground md:text-xl md:leading-[1.55]">
               My path here ran through neighborhood economic development and
@@ -65,13 +65,30 @@ export default function About() {
           Focus Areas
         </h2>
         <ul className="max-w-[38rem] space-y-2 font-mono text-lg leading-[1.6] text-foreground md:text-xl md:leading-[1.55]">
-          <li>Geospatial Systems Architecture</li>
-          <li>Geospatial Data Pipelines</li>
-          <li>Infrastructure Resilience Modeling</li>
-          <li>Evacuation and Emergency Response Modeling</li>
-          <li>Critical Infrastructure Analysis</li>
-          <li>Climate Risk and Hazard Data</li>
-          <li>Authoritative and Municipal Mapping</li>
+          <li>
+            Spatial data infrastructure
+            <p className="mt-1 font-mono text-sm leading-relaxed text-muted-foreground md:text-base">
+              Designing reliable pipelines and analytical systems for complex spatial and scientific data.
+            </p>
+          </li>
+          <li>
+            Infrastructure resilience
+            <p className="mt-1 font-mono text-sm leading-relaxed text-muted-foreground md:text-base">
+              Building spatial analysis and modeling workflows for critical infrastructure, hazards, and resilience.
+            </p>
+          </li>
+          <li>
+            Mobility &amp; network systems
+            <p className="mt-1 font-mono text-sm leading-relaxed text-muted-foreground md:text-base">
+              Developing data and simulation workflows for transportation, evacuation, and dynamic access problems.
+            </p>
+          </li>
+          <li>
+            AI-ready data infrastructure
+            <p className="mt-1 font-mono text-sm leading-relaxed text-muted-foreground md:text-base">
+              Transforming complex spatial and scientific data into validated, structured, model-ready analytical systems.
+            </p>
+          </li>
         </ul>
       </section>
 
@@ -79,6 +96,10 @@ export default function About() {
         <h2 className="font-heading text-4xl leading-tight tracking-tight sm:text-5xl mb-6">
           Contact
         </h2>
+        <p className="mb-6 max-w-[38rem] font-mono text-base leading-relaxed text-muted-foreground md:text-lg">
+          Interested in spatial data infrastructure, AI-ready data pipelines, or
+          infrastructure resilience? Get in touch.
+        </p>
         <ContactForm />
       </section>
     </div>
